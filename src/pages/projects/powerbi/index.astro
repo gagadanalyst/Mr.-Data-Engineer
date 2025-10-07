@@ -8,7 +8,7 @@ import PageLayout from '@/layouts/CommonPage.astro'
 </PageLayout>
 
 <script>
-fetch('/myprojects/powerbi.html')
+fetch('/Mr.-Data-Engineer/myprojects/powerbi.html')
   .then((response) => response.text())
   .then((text) => new DOMParser().parseFromString(text, "text/html"))
   .then((dom) =>  

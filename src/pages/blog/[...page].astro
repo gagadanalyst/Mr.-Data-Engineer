@@ -2,7 +2,10 @@
 import type { GetStaticPaths, Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 
-import { Paginator, PostPreview } from 'astro-pure/components/pages'
+import { Paginator } from 'astro-pure/components/pages'
+// Added PostPreview custom to change urls for deploying to github pages
+import PostPreview from '@/components/custom/PostPreview.astro'
+
 import { getBlogCollection, getUniqueTags, sortMDByDate } from 'astro-pure/server'
 import { Button, Icon } from 'astro-pure/user'
 import PageLayout from '@/layouts/BaseLayout.astro'
@@ -29,7 +32,7 @@ interface Props {
 const { page, uniqueTags, collectionsCount } = Astro.props
 
 const meta = {
-  description: 'Some posts or archives of my blog',
+  description: 'Some posts or archives of Mr.Data Engineer blog',
   title: 'Blog'
 }
 
@@ -65,7 +68,7 @@ const paginationProps = {
               <span class='text-muted-foreground'>
                 Page {page.currentPage} - Showing {page.data.length} of {collectionsCount} posts
               </span>
-              <a aria-label='View all blog by years' href='/archives' data-astro-prefetch>
+              <a aria-label='View all blog by years' href='/Mr.-Data-Engineer/archives' data-astro-prefetch>
                 View all posts by years →
               </a>
             </div>
@@ -88,12 +91,12 @@ const paginationProps = {
               <ul class='text-bgColor flex flex-wrap gap-2'>
                 {uniqueTags.map((tag) => (
                   <li>
-                    <Button title={tag} href={`/tags/${tag}`} variant='pill' />
+                    <Button title={tag} href={`/Mr.-Data-Engineer/tags/${tag}`} variant='pill' />
                   </li>
                 ))}
               </ul>
               <span class='mt-4 block sm:text-end'>
-                <a aria-label='View all blog categories' href='/tags' data-astro-prefetch>
+                <a aria-label='View all blog categories' href='/Mr.-Data-Engineer/tags' data-astro-prefetch>
                   View all →
                 </a>
               </span>

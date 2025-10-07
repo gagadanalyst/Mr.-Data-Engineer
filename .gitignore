@@ -3,7 +3,6 @@ bun.lock
 CODE_OF_CONDUCT.md
 eslint.config.mjs
 LICENSE
-package-lock.json
 prettier.config.mjs
 README-zh-CN.md
 README.md
