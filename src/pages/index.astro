@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 
-import { PostPreview } from 'astro-pure/components/pages'
+import PostPreview  from '@/components/custom/PostPreview.astro'
 import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
 import { Button, Icon, Label } from 'astro-pure/user'
 import Card from '@/components/custom/Card.astro'
@@ -131,17 +131,17 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       <Section title='Latest Projects'>
         <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
           <ProjectCard
-            href='/Mr.-Data-Engineer/projects'
+            href='/Mr.-Data-Engineer/projects/fabric'
             heading='Microsoft Fabric'
             subheading=''
             imagePath='/src/assets/projects/Fabric.png'
             date='June 2025'
           />
           <ProjectCard
-            href='/Mr.-Data-Engineer/projects'
-            heading='Diabetes Classfication using KNN'
+            href='/Mr.-Data-Engineer/projects/pyspark'
+            heading='Uber Case Study using PySpark'
             subheading=''
-            imagePath='/src/assets/projects/classification.png'
+            imagePath='/src/assets/projects/pyspark.jpg'
             date='June 2025'
           />
           
