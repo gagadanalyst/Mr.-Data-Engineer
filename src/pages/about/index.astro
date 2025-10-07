@@ -28,8 +28,8 @@ import PageLayout from '@/layouts/CommonPage.astro'
 
 
 <script type="module"  lang="js">
-  import * as pdfjsLib from '/scripts/pdf.mjs'
-  pdfjsLib.GlobalWorkerOptions.workerSrc = "/scripts/pdf.worker.mjs";
+  import * as pdfjsLib from '/Mr.-Data-Engineer/scripts/pdf.mjs'
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "/Mr.-Data-Engineer/scripts/pdf.worker.mjs";
 
   var pdfDoc = null;
   var pageNum;
@@ -113,6 +113,6 @@ function zoom(newScale) {
 
 
 
-const pdfUrl = "/Mr.-Data-Engineer/public/Gaga.pdf";
+const pdfUrl = "/Mr.-Data-Engineer/Gaga.pdf";
 renderPDF(pdfUrl);
 </script>
