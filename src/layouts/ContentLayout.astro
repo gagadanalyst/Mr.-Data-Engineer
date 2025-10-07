@@ -13,7 +13,7 @@ interface Props {
   showaside?: string
 }
 
-const { meta, highlightColor, back = '/',showaside, ...props } = Astro.props
+const { meta, highlightColor, back,showaside, ...props } = Astro.props
 let hideaside = typeof showaside !== 'undefined' ? false : true
 ---
 
