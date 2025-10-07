@@ -1,0 +1,11 @@
+{
+  "collections": [
+    {
+      "hasSchema": true,
+      "name": "blog"
+    }
+  ],
+  "entries": {
+    "file:///c:/users/gmatharu/downloads/astro_site/src/content/blog/s3-bucket-types/index.md": "blog"
+  }
+}
