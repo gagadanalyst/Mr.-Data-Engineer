@@ -8,6 +8,7 @@ tags:
 language: 'English'
 draft: false
 heroImage: { src: './s3bucket.png', color: '#9698C1' }
+enableComment: false
 ---
 ## What is a S3 bucket?
 
