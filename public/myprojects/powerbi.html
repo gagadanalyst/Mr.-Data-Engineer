@@ -7607,7 +7607,7 @@ a.anchor-link {
 <li>Download SQL server localDB from <a href="https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver16">here</a></li>
 </ol>
 <p>       I downloaded the <strong>SQL Server 2022 Express edition</strong>, which downloaded the file <strong>SQL2022-SSEI-Expr.exe</strong>. When you open this file you get a screen like below</p>
-<p>       <center><img alt="SQL Server Local DB Download" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/SQLServerLocalDBDownload.JPG" title="SQL Server Local DB Download" width="500"/></center></p>
+<p>       <center><img alt="SQL Server Local DB Download" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/SQLServerLocalDBDownload.jpg" title="SQL Server Local DB Download" width="500"/></center></p>
 <p>       Click on Download Media and Save the file SqlLocalDB.msi to your preferred location and then double click on it to install SQL Server LocalDB to you machine. It's basically a DBMS which supports T-SQL, which I used to load AdvenureWorks Database to SQL server. Once you install SQL server LocalDB, it install a utility <strong>sqllocaldb</strong> which we use to interact and manage SQL server LocalDB. For example to find the instance name, start and stop the instance.</p>
 <ol start="2">
 <li>You also need to install <strong>Microsoft® Command Line Utilities for SQL Server</strong>, which install <strong>sqlcmd</strong> command line utility to interact with SQL server. Download and install from <a href="https://www.microsoft.com/en-us/download/details.aspx?id=53591">here</a> This utilty helps to run SQL command against SQL Server LocalDB.</li>
@@ -7648,7 +7648,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="ldata"></a></p>
 <h1 id="6.-Load-Data-from-SQL-Server-to-Power-BI">6. Load Data from SQL Server to Power BI<a class="anchor-link" href="#6.-Load-Data-from-SQL-Server-to-Power-BI">¶</a></h1><p>       Click on <code>SQL Server Data</code> on the Home ribbon of Power BI Desktop. I was presented with a dialog box to fill connection details, which we know from Databse Restoration steps above.</p>
-<p>       <center><img alt="Connect to SQL Server PowerBI" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/GetDataFromSQLServer.JPG" title="Connect to SQL Server PowerBI" width="600"/></center></p>
+<p>       <center><img alt="Connect to SQL Server PowerBI" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/GetDataFromSQLServer.jpg" title="Connect to SQL Server PowerBI" width="600"/></center></p>
 <p>       While working with any database ERD diagrams are really useful. I found the ERD diagram <a href="https://cursos.virtual.uniandes.edu.co/isis3301/wp-content/uploads/sites/208/2019/08/adventureworks.pdf">here</a>, studied it and decided to use below tables for my analysis</p>
 <table>
 <thead>
@@ -7716,7 +7716,7 @@ a.anchor-link {
 <p><a id="dmodel"></a></p>
 <h1 id="7.-Transformations-and-The-Data-Model">7. Transformations and The Data Model<a class="anchor-link" href="#7.-Transformations-and-The-Data-Model">¶</a></h1><h3 id="1.-Transformations">1. Transformations<a class="anchor-link" href="#1.-Transformations">¶</a></h3><p>        1. Checked all tables for the distributions of the columns while trying to make sense of their usage in my analysis. There were null values in <code>ProductSubcategoryID</code> column of <code>product</code>, Checked the distibution of different values and decided to replace null values with most common value of 2.</p>
 <p>       <center><img alt="Null Values in Product Table" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/NullValuesProductSubCatIDProductTable.jpg" title="Null Values in Product Table" width="600"/></center></p>
-<p>       <center><img alt="Null Values in Product Table Fix" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/NullValuesProductSubCatIDProductTableFix.JPG" title="Null Values in Product Table Fix" width="600"/></center></p>
+<p>       <center><img alt="Null Values in Product Table Fix" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/NullValuesProductSubCatIDProductTableFix.jpg" title="Null Values in Product Table Fix" width="600"/></center></p>
 <p>        2. Used below <strong>DAX</strong> code to create a Calendar Table in order to automatically generate Fiscal year segregations</p>
 <pre><code>Calendar = 
 
@@ -7831,10 +7831,10 @@ WorkOrder'[Production.Product.StandardCost])
 
 WastePercent = calculate(SUM( 'Production WorkOrder'[ScrappedQty])/SUM('Production WorkOrder'[OrderQty]))
 </code></pre>
-<p>       <center><img alt="Transforms" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Transforms.JPG" title="Transforms" width="300"/></center></p>
+<p>       <center><img alt="Transforms" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Transforms.jpg" title="Transforms" width="300"/></center></p>
 <h3 id="2.-Data-Model">2. Data Model<a class="anchor-link" href="#2.-Data-Model">¶</a></h3><p>I modelled the data using a star schema with <strong>Product</strong> table as the <em>fact table</em> and others as <em>Dimensions</em></p>
-<p>       <center><img alt="Data  Model" height="800" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/DataModel.JPG" title="Data  Model" width="1080"/></center></p>
-<p>       <center><img alt="Table RelationShips" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/RelationShips.JPG" title="Table RelationShips" width="800"/></center></p>
+<p>       <center><img alt="Data  Model" height="800" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/DataModel.jpg" title="Data  Model" width="1080"/></center></p>
+<p>       <center><img alt="Table RelationShips" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/RelationShips.jpg" title="Table RelationShips" width="800"/></center></p>
 <p><a href="#1">Back to Top</a></p>
 </div>
 </div>
@@ -7848,8 +7848,8 @@ WastePercent = calculate(SUM( 'Production WorkOrder'[ScrappedQty])/SUM('Producti
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="dash"></a></p>
 <h1 id="8.-Dashboard">8. Dashboard<a class="anchor-link" href="#8.-Dashboard">¶</a></h1><p>This dashboard analyses manufacturing and inventory operations, the dashboard is prepare to have a navigational interface. The main page includes leads to two areas namely <strong>Production Overview and Inventory Overview</strong>. Each then breakdown details and KPIs on their own page afterward.</p>
-<h4 id="Homepage">Homepage<a class="anchor-link" href="#Homepage">¶</a></h4><p>       <center><img alt="Dashboard Homepage" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/HomePage.JPG" title="Dashboard Homepage" width="600"/></center></p>
-<p>       <center><img alt="Dashboard Homepage" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/HomePage1.JPG" title="Dashboard Homepage" width="600"/></center></p>
+<h4 id="Homepage">Homepage<a class="anchor-link" href="#Homepage">¶</a></h4><p>       <center><img alt="Dashboard Homepage" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/HomePage.jpg" title="Dashboard Homepage" width="600"/></center></p>
+<p>       <center><img alt="Dashboard Homepage" height="600" src="/Mr.-Data-Engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/HomePage1.jpg" title="Dashboard Homepage" width="600"/></center></p>
 <h4 id="Production-Overview">Production Overview<a class="anchor-link" href="#Production-Overview">¶</a></h4><p>       This page gives information about the manufacturing overview of the company
 . An assumption is made that the fiscal year starts on October 1st and ends on September 30th.<br/>
 All the charts and KPIs are described below: -</p>
